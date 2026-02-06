@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container" style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>
           <Package size={32} />
-          <span>LuxeStore</span>
+          <span>Gebeya</span>
         </Link>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
           <Link to="/" style={{ fontWeight: 500 }}>Home</Link>

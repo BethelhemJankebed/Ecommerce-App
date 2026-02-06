@@ -12,6 +12,10 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.title}
+          onError={(e) => {
+            e.target.onerror = null; 
+            e.target.src = 'https://placehold.co/600x400?text=No+Image';
+          }}
           style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
         />
         <button

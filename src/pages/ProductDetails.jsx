@@ -23,7 +23,15 @@ const ProductDetails = () => {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'start' }}>
         <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
-          <img src={product.image} alt={product.title} style={{ width: '100%', display: 'block' }} />
+          <img 
+            src={product.image} 
+            alt={product.title} 
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = 'https://placehold.co/600x400?text=No+Image';
+            }}
+            style={{ width: '100%', display: 'block' }} 
+          />
         </div>
 
         <div>

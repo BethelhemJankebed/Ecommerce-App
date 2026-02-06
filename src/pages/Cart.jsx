@@ -27,7 +27,15 @@ const Cart = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {cart.map(item => (
             <div key={item.id} className="glass" style={{ display: 'flex', gap: '1.5rem', padding: '1.5rem', borderRadius: 'var(--radius)', alignItems: 'center' }}>
-              <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px' }} />
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.src = 'https://placehold.co/100x100?text=No+Image';
+                }}
+                style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px' }} 
+              />
               
               <div style={{ flex: 1 }}>
                 <h3 style={{ marginBottom: '0.25rem' }}>{item.title}</h3>
